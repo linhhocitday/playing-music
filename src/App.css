@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  z-index: 1111;
+  position: relative;
+}
+
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.background-img {
+  background: center no-repeat;
+  background-size: cover;
+  padding-top: calc(1 / 2 * 100%);
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(6, 0, 71);
+  background: linear-gradient(
+    0deg,
+    rgba(6, 0, 71, 1) 0%,
+    rgba(6, 0, 71, 1) 16%,
+    rgba(6, 0, 71, 0) 84%,
+    rgba(6, 0, 71, 0) 100%
+  );
+  backdrop-filter: blur(8px);
+}
+
+.grid-container {
+  display: grid;
+  grid-template: auto / 6fr 4fr;
+  grid-gap: 120px;
+}
+
+.current-song-block {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 111111;
+  max-width: 38vw;
+  width: 100%;
+  background-color: rgba(107, 10, 61, 0.4);
+  padding: 40px 100px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.list-wrapper {
+  position: fixed;
+  bottom: 40px;
+  max-width: 48vw;
+  width: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1.uppercase {
+  color: #b3005e;
+  font-size: 88px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.list-wrapper p.uppercase {
+  font-size: 20px;
+}
+
+.song {
+  display: grid;
+  grid-template: auto / 1fr 1fr 10fr 1fr;
+  grid-gap: 24px;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+  transition: background-color 0.2s;
+}
+
+.song:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.icon path {
+  color: #ff5f9e;
+}
+
+.song-name {
+  margin-bottom: 4px;
+}
+
+.artist-name {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.img {
+  background: center no-repeat;
+  background-size: cover;
+  padding-top: 100%;
+}
+
+.current-song-img {
+  margin-bottom: 36px;
+}
+
+.current-song-name {
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.current-artist-name {
+  margin-bottom: 32px;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.player-wrapper {
+  display: grid;
+  grid-gap: 4px;
+  grid-template: auto / repeat(5, 1fr);
+  padding: 0 32px;
+  align-items: center;
+}
+
+.btn-wrapper {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  margin: 0 auto;
+  transition: background-color 0.4s, border 0.4s;
+  overflow: hidden;
+}
+
+.btn-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.player-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -47%);
+  padding: 16px;
+}
+
+.btn-circle {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin: 0 auto;
+  transition: background-color 0.4s, border 0.4s;
+  overflow: hidden;
+}
+
+.btn-circle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.player-toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -47%);
+  padding: 16px;
+}
+
+.player-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+.player-btn path {
+  color: #e90064;
+}
+
+.time-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.time-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.current-song-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.current-song-time span {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.time-range-wrapper {
+  position: relative;
+}
+
+.current-time-line {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #fff;
+}
